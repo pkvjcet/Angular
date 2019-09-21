@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  name="Prince";
+  course="Fullstack development";
+  buttonactive=false;
+  constructor(){
+    setTimeout(() => {
+      this.buttonactive=true;
+    }, 10000);
+  }
+
 }
