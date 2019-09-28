@@ -8,6 +8,7 @@ import {ApiService} from "../api.service";
 })
 export class ViewcourseComponent implements OnInit {
   myData:Array<object>=[];
+  status=false;
   constructor(private api:ApiService) { }
 
   ngOnInit() {
@@ -16,8 +17,9 @@ export class ViewcourseComponent implements OnInit {
   public fetchValues(){
     return this.api.viewCourses().subscribe((response:Array<object>)=>{
         this.myData=response;
+        this.status=true;
         console.log(response);
-        
+
     });
   }
 
