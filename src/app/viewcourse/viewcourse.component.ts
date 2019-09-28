@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-viewcourse',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewcourse.component.css']
 })
 export class ViewcourseComponent implements OnInit {
-
-  constructor() { }
+  myData:Array<object>=[];
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
+    this.fetchValues();
+  }
+  public fetchValues(){
+    return this.api.viewCourses().subscribe((response:Array<object>)=>{
+        this.myData=response;
+        console.log(response);
+        
+    });
   }
 
 }

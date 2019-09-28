@@ -10,5 +10,8 @@ export class ApiService {
   addCourse(data){
       return this.http.post("http://dummyapilist.herokuapp.com/addcourse",data);
   }
+  viewCourses(){
+      return this.http.get("http://dummyapilist.herokuapp.com/getcourses");
+  }
 
 }
